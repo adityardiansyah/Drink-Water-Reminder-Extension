@@ -3,7 +3,7 @@
   "displayName": "Waktunya Minum",
   "description": "Pengingat Minum kamu saat ngoding",
   "publisher": "AdityaArdiansyah",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "engines": {
     "vscode": "^1.107.0"
@@ -41,7 +41,7 @@
     ],
     "configuration": {
       "type": "object",
-      "title": "Drink Water Reminder",
+      "title": "Config Waktunya Minum",
       "properties": {
         "waktunya-minum.intervalMinutes": {
           "type": "number",
@@ -69,5 +69,9 @@
     "typescript": "^5.9.3",
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adityardiansyah/Drink-Water-Reminder-Extension.git"
   }
 }
