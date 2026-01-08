@@ -1,7 +1,8 @@
 {
-  "name": "drinkWaterReminder",
-  "displayName": "drink-water-reminder",
-  "description": "Water reminder for developers",
+  "name": "waktunya-minum",
+  "displayName": "Waktunya Minum",
+  "description": "Pengingat Minum kamu saat ngoding",
+  "publisher": "AdityaArdiansyah",
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
@@ -10,36 +11,43 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "water",
+    "drink reminder",
+    "drink water",
+    "drink water reminder",
+    "waktunya minum",
+    "minum"
+  ],
+  "icon": "logo.png",
   "activationEvents": [
-    "onStartupFinished",
-    "onCommand:drinkWaterReminder.setInterval",
-    "onCommand:drinkWaterReminder.remindNow"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "drinkWaterReminder.helloWorld",
+        "command": "waktunya-minum.helloWorld",
         "title": "Hello World"
       },
       {
-        "command": "drinkWaterReminder.setInterval",
-        "title": "Set Drink Water Interval"
+        "command": "waktunya-minum.setInterval",
+        "title": "Tetapkan Jeda Minum Air"
       },
       {
-        "command": "drinkWaterReminder.remindNow",
-        "title": "💧 Remind Drink Now"
+        "command": "waktunya-minum.remindNow",
+        "title": "💧 Ingatkan untuk Minum Sekarang"
       }
     ],
     "configuration": {
       "type": "object",
       "title": "Drink Water Reminder",
       "properties": {
-        "drinkWaterReminder.intervalMinutes": {
+        "waktunya-minum.intervalMinutes": {
           "type": "number",
           "default": 30,
           "minimum": 1,
-          "description": "Reminder interval in minutes"
+          "description": "Interval pengingat dalam menit untuk minum air."
         }
       }
     }

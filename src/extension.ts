@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 let interval: ReturnType<typeof setInterval> | undefined;
 
 export function getLocalizedMessage(locale?: string) {
-	const lang = (locale ?? vscode.env.language ?? 'en').toLowerCase();
+	const lang = (locale ?? 'id').toLowerCase();
 	const primary = lang.split(/[-_]/)[0];
 	const messages: Record<string, string> = {
 		en: '💧 Time to drink water! Keep yourself healthy.',
@@ -16,7 +16,7 @@ export function getLocalizedMessage(locale?: string) {
 		ja: '💧 水を飲む時間です！健康に気を付けてください。',
 		ko: '💧 물을 마실 시간입니다! 건강을 챙기세요。'
 	};
-	return messages[primary] ?? messages['en'];
+	return messages[primary] ?? messages['id'];
 }
 
 export function activate(context: vscode.ExtensionContext) {

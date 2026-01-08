@@ -1,9 +1,10 @@
-# 💧 Drink Water Reminder – VS Code Extension
+# 💧 Waktunya Minum – VS Code Extension
 
-**Drink Water Reminder** is a Visual Studio Code extension that helps developers **remember to drink water regularly while working**, so they can stay healthy and productive during long coding sessions.
+**Waktunya Minum** is a Visual Studio Code extension that helps developers **remember to drink water regularly while working**, so they can stay healthy and productive during long coding sessions.
 
 This extension is **open source**, lightweight, and designed to be non-intrusive to your workflow.
 
+![Screenshot Waktunya Minum](waktunya-minum-ss.png)
 ---
 
 ## ✨ Features
@@ -20,14 +21,14 @@ This extension is **open source**, lightweight, and designed to be non-intrusive
 
 ### From VS Code Marketplace
 1. Open **Extensions** in VS Code (`Ctrl + Shift + X`)
-2. Search for **Drink Water Reminder**
+2. Search for **Waktunya Minum**
 3. Click **Install**
 
 ### Manual (Development)
 
 ```bash
 git clone https://github.com/adityardiansyah/Drink-Water-Reminder-Extension
-cd drink-water-reminder-extension
+cd Drink-Water-Reminder-Extension
 npm install
 code .
 ```
@@ -39,7 +40,7 @@ You can configure the reminder interval via VS Code Settings.
 
 ### Using Settings UI
 1. Open Settings
-2. Search for Drink Water Reminder
+2. Search for Waktunya Minum
 3. Set the reminder interval (in minutes)
 ``` bash
 Using settings.json
