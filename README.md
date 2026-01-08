@@ -1,140 +1,101 @@
-💧 Drink Water Reminder – VS Code Extension
+# 💧 Drink Water Reminder – VS Code Extension
 
-Drink Water Reminder is a Visual Studio Code extension that helps developers remember to drink water regularly while working, so they can stay healthy and productive during long coding sessions.
+**Drink Water Reminder** is a Visual Studio Code extension that helps developers **remember to drink water regularly while working**, so they can stay healthy and productive during long coding sessions.
 
-This extension is open source, lightweight, and designed to be non-intrusive to your workflow.
+This extension is **open source**, lightweight, and designed to be non-intrusive to your workflow.
 
-✨ Features
+---
 
-⏰ Automatic water drinking reminders based on a time interval
+## ✨ Features
 
-⚙️ Configurable reminder interval (in minutes)
+- ⏰ **Automatic water drinking reminders** based on a time interval  
+- ⚙️ **Configurable reminder interval** (in minutes)  
+- 💬 **Native VS Code notifications**  
+- ⌨️ **Manual command** to trigger a reminder instantly  
+- 🚀 **Lightweight and performance-friendly**
 
-💬 Native VS Code notifications
+---
 
-⌨️ Manual command to trigger a reminder instantly
+## 📦 Installation
 
-🚀 Lightweight and performance-friendly
+### From VS Code Marketplace
+1. Open **Extensions** in VS Code (`Ctrl + Shift + X`)
+2. Search for **Drink Water Reminder**
+3. Click **Install**
 
-📦 Installation
-From VS Code Marketplace
+### Manual (Development)
 
-Open Extensions in VS Code (Ctrl + Shift + X)
-
-Search for Drink Water Reminder
-
-Click Install
-
-Manual (Development)
-
-Clone this repository:
-
-git clone https://github.com/username/drink-water-reminder.git
-
-
-Go to the project folder:
-
-cd drink-water-reminder
-
-
-Install dependencies:
-
+```bash
+git clone https://github.com/adityardiansyah/Drink-Water-Reminder-Extension
+cd drink-water-reminder-extension
 npm install
-
-
-Open the project in VS Code:
-
 code .
-
-
+```
 Press F5 to run the extension in development mode.
 
-⚙️ Configuration
+## ⚙️ Configuration
 
 You can configure the reminder interval via VS Code Settings.
 
-Using Settings UI
-
-Open Settings
-
-Search for Drink Water Reminder
-
-Set the reminder interval (in minutes)
-
+### Using Settings UI
+1. Open Settings
+2. Search for Drink Water Reminder
+3. Set the reminder interval (in minutes)
+``` bash
 Using settings.json
 {
   "drinkWaterReminder.interval": 30
 }
-
-
+```
 Default value: 30 minutes
 
-⌨️ Commands
-
+### ⌨️ Commands
 This extension provides a manual command:
 
-💧 Remind Me to Drink Water Now
+- 💧 **Remind Me to Drink Water Now**
 
 How to use:
+1. Press Ctrl + Shift + P
+2. Type: Remind Me to Drink Water Now
+3. Press Enter
 
-Press Ctrl + Shift + P
-
-Type: Remind Me to Drink Water Now
-
-Press Enter
-
-🧠 Why This Extension?
+## 🧠 Why This Extension?
 
 Many developers forget to drink water because they are deeply focused on coding.
 This extension was created as a simple and consistent reminder to help maintain healthy habits during work.
 
-A healthy developer is a productive developer.
+**A healthy developer is a productive developer.**
 
-🛠 Built With
+## 🛠 Built With
+- TypeScript
+- VS Code Extension API
+- Node.js
 
-TypeScript
-
-VS Code Extension API
-
-Node.js
-
-🤝 Contributing
-
+## 🤝 Contributing
 Contributions are welcome 🙌
 
 How to contribute:
-
-Fork this repository
-
-Create a new branch (feature/your-feature-name)
-
-Commit your changes
-
-Open a Pull Request
+1. Fork this repository
+2. Create a new branch (feature/your-feature-name)
+3. Commit your changes
+4. Open a Pull Request
 
 Ideas for contribution:
+- Water intake statistics
+- Focus or idle detection
+- Status bar indicator
+- Custom reminder messages
 
-Water intake statistics
-
-Focus or idle detection
-
-Status bar indicator
-
-Custom reminder messages
-
-📄 License
-
+## 📄 License
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this software.
 
-👤 Author
-
+## 👤 Author
 Aditya Ardiansyah
 Developer & Product Builder
 
 If you find this extension useful, please consider giving the repository a ⭐.
 
-☕ Friendly Reminder
-
+## ☕ Friendly Reminder
 When the notification appears…
 Drink some water first, then continue coding 💧😄
