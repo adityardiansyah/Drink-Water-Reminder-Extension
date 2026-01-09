@@ -3,7 +3,7 @@
   "displayName": "Waktunya Minum",
   "description": "Pengingat Minum kamu saat ngoding",
   "publisher": "AdityaArdiansyah",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "engines": {
     "vscode": "^1.107.0"
