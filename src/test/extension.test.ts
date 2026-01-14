@@ -5,18 +5,18 @@ suite('Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
 
 	test('Configuration default is a number >= 1', async () => {
-		const cfg = vscode.workspace.getConfiguration('drinkWaterReminder');
+		const cfg = vscode.workspace.getConfiguration('waktunya-minum');
 		const val = cfg.get<number>('intervalMinutes');
 		assert.ok(typeof val === 'number', 'intervalMinutes should be a number');
 		assert.ok((val ?? 0) >= 1, 'intervalMinutes should be >= 1');
 	});
 
 	test('Update configuration and restore', async () => {
-		const cfg = vscode.workspace.getConfiguration('drinkWaterReminder');
+		const cfg = vscode.workspace.getConfiguration('waktunya-minum');
 		const original = cfg.get<number>('intervalMinutes');
 		await cfg.update('intervalMinutes', 5, vscode.ConfigurationTarget.Global);
 		// re-fetch configuration so we observe the applied change
-		const updated = vscode.workspace.getConfiguration('drinkWaterReminder').get<number>('intervalMinutes');
+		const updated = vscode.workspace.getConfiguration('waktunya-minum').get<number>('intervalMinutes');
 		assert.strictEqual(updated, 5);
 		// restore
 		await cfg.update('intervalMinutes', original, vscode.ConfigurationTarget.Global);
