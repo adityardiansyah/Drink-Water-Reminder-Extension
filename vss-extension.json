@@ -1,0 +1,65 @@
+{
+    "manifestVersion": 1,
+    "id": "waktunya-minum",
+    "version": "0.0.3",
+    "name": "Waktunya Minum",
+    "description": "Pengingat Minum kamu saat ngoding",
+    "publisher": "AdityaArdiansyah",
+    "license": "MIT",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "waktunya-minum.helloWorld",
+            "type": "ms.vss-web#control",
+            "targets": [
+                "ms.vss-web#collection-page"
+            ],
+            "properties": {
+                "name": "Hello World"
+            }
+        },
+        {
+            "id": "waktunya-minum.setInterval",
+            "type": "ms.vss-web#control",
+            "targets": [
+                "ms.vss-web#collection-page"
+            ],
+            "properties": {
+                "name": "Tetapkan Jeda Minum Air"
+            }
+        },
+        {
+            "id": "waktunya-minum.remindNow",
+            "type": "ms.vss-web#control",
+            "targets": [
+                "ms.vss-web#collection-page"
+            ],
+            "properties": {
+                "name": "💧 Ingatkan untuk Minum Sekarang"
+            }
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/adityardiansyah/Drink-Water-Reminder-Extension.git"
+    },
+    "keywords": [
+        "water",
+        "drink reminder",
+        "drink water",
+        "drink water reminder",
+        "waktunya minum",
+        "minum"
+    ],
+    "categories": [
+        "Other"
+    ],
+    "icon": "logo.png",
+    "galleryFlags": [
+        "Public"
+    ]
+}
