@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
 				context.globalState.update('skipCount', 0);
 			});
 		} else {
-			vscode.window.showInformationMessage(getLocalizedMessage(), "Lewati", "Sudah Minum").then(selection => {
+			vscode.window.showInformationMessage(getLocalizedMessage(), { modal: true }, "Lewati", "Sudah Minum").then(selection => {
 				if (selection === "Lewati") {
 					context.globalState.update('skipCount', skipCount + 1);
 				}
