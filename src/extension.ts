@@ -26,8 +26,20 @@ export function activate(context: vscode.ExtensionContext) {
 		interval = undefined;
 	}
 
-	const showReminder = () => {
-		vscode.window.showInformationMessage(getLocalizedMessage());
+	const showReminder = (context: vscode.ExtensionContext) => {
+		const skipCount = context.globalState.get<number>('skipCount', 0);
+
+		if (skipCount >= 3) {
+			vscode.window.showInformationMessage("Waktunya Minum Sekarang", { modal: true }).then(() => {
+				context.globalState.update('skipCount', 0);
+			});
+		} else {
+			vscode.window.showInformationMessage(getLocalizedMessage(), "Lewati", "Sudah Minum").then(selection => {
+				if (selection === "Lewati") {
+					context.globalState.update('skipCount', skipCount + 1);
+				}
+			});
+		}
 	};
 
 	// helper to (re)start the timer with given minutes
@@ -38,26 +50,26 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		// run immediately, then every `minutes`
-		showReminder();
-		interval = setInterval(showReminder, minutes * 60 * 1000);
+		showReminder(context);
+		interval = setInterval(() => showReminder(context), minutes * 60 * 1000);
 	};
 
 	// read configured minutes (default 30)
-	const config = vscode.workspace.getConfiguration('drinkWaterReminder');
+	const config = vscode.workspace.getConfiguration('waktunya-minum');
 	let minutes = config.get<number>('intervalMinutes', 30);
 	startTimer(minutes);
 
 	// restart timer when configuration changes
 	const configListener = vscode.workspace.onDidChangeConfiguration((e) => {
-		if (e.affectsConfiguration('drinkWaterReminder.intervalMinutes')) {
-			const newMin = vscode.workspace.getConfiguration('drinkWaterReminder').get<number>('intervalMinutes', 30);
+		if (e.affectsConfiguration('waktunya-minum.intervalMinutes')) {
+			const newMin = vscode.workspace.getConfiguration('waktunya-minum').get<number>('intervalMinutes', 30);
 			minutes = newMin;
 			startTimer(minutes);
 		}
 	});
 
 	// command to quickly set interval via input box
-	const setIntervalCommand = vscode.commands.registerCommand('drinkWaterReminder.setInterval', async () => {
+	const setIntervalCommand = vscode.commands.registerCommand('waktunya-minum.setInterval', async () => {
 		const input = await vscode.window.showInputBox({
 			prompt: 'Masukkan interval pengingat (menit)',
 			value: String(minutes),
@@ -72,7 +84,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		if (input) {
 			const n = Math.max(1, Math.round(Number(input)));
-			await vscode.workspace.getConfiguration('drinkWaterReminder').update('intervalMinutes', n, vscode.ConfigurationTarget.Global);
+			await vscode.workspace.getConfiguration('waktunya-minum').update('intervalMinutes', n, vscode.ConfigurationTarget.Global);
 			vscode.window.showInformationMessage(`Interval diubah menjadi ${n} menit`);
 		}
 	});
